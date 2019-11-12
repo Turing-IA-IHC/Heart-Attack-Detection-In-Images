@@ -33,9 +33,9 @@ KEEP_ONLY_LATEST = False# Keeping only the last checkpoint
 
 # Train configurations
 WIDTH, HEIGHT = 256, 256# Size images to train
-STEPS = 400             # How many steps per epoch
+STEPS = 500             # How many steps per epoch
 VALIDATION_STEPS = 100  # How many steps per next validation
-BATCH_SIZE = 32         # How many images at the same time, change depending on your GPU
+BATCH_SIZE = 48         # How many images at the same time, change depending on your GPU
 LR = 0.003              # Learning rate
 CLASSES = 2             # Don't chage, 0=Infarct, 1=Normal
 # === ===== ===== ===== ===
@@ -113,4 +113,3 @@ for i in range(NUM_CHECK_POINT):
     
     print('Saving model: {:02}.'.format(i))
     NET.save(OUTPUT_DIR + "{:02}_model.h5".format(i))
- 

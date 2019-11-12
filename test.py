@@ -21,9 +21,9 @@ MODEL_PATH = "./model/" + "model.h5"    # Full path of model
 
 # Test configurations
 WIDTH, HEIGHT = 256, 256        # Size images to train
-CLASS_COUNTING = True           # Test class per class and show detatils each 
+CLASS_COUNTING = True           # Test class per class and show details each 
 BATCH_SIZE = 32                 # How many images at the same time, change depending on your GPU
-CLASSES = ['Infarct', 'None']   # Classes to detect. they most be in same position with output vector
+CLASSES = ['00None', '01Infarct']   # Classes to detect. they most be in same position with output vector
 # === ===== ===== ===== ===
 
 print("Loading model from:", MODEL_PATH)
@@ -59,6 +59,8 @@ if CLASS_COUNTING:
             p, r = predict(INPUT_PATH_TEST + f + "/" + a)
             if p == clase:
                 indivSuccess = indivSuccess + 1
+            #elif p == '00None':
+            #    print(f + "/" + a)
             indivCases = indivCases + 1
 
         print("\tCases", indivCases, "Success", indivSuccess, "Rate", indivSuccess/indivCases)
